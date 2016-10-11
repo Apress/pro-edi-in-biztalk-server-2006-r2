@@ -1,0 +1,103 @@
+﻿<VisualStudioProject>
+    <BIZTALK
+        ProductVersion = "3.6.1230"
+        SchemaVersion = "1.0"
+        ProjectGuid = "{45FCCDA3-16CC-41D8-9287-D1C83DAC5873}"
+    >
+        <Build>
+            <Settings>
+                <EditorCommon/>
+                <ProjectCommon
+                    AssemblyKeyName = ""
+                    AssemblyKeyFile = "../../../Apress.Integration.Chapter4.snk"
+                    AssemblyDelaySign = "False"
+                    AssemblyTitle = ""
+                    AssemblyDescription = ""
+                    AssemblyDefaultAlias = ""
+                    AssemblyConfiguration = ""
+                    AssemblyTrademark = ""
+                    AssemblyProduct = ""
+                    AssemblyInformationalVersion = "1.0.0.0"
+                    AssemblyFileVersion = "1.0.0.0"
+                    AssemblyCopyright = ""
+                    AssemblyCompany = ""
+                    AssemblyVersion = "1.0.0.0"
+                    DefaultNamespace = "Apress.Integration.EDI864.Common"
+                    AssemblyName = "Apress.Integration.EDI864.Common"
+                />
+                <Config
+                    Name = "Development"
+                    ApplicationName = ""
+                    BpelCompliance = "True"
+                    GenerateDebuggingInformation = "True"
+                    EmbedTrackingInformation = "True"
+                    TreatWarningsAsErrors = "False"
+                    WarningLevel = "4"
+                    OutputPath = "bin\Development\"
+                />
+                <Config
+                    Name = "Deployment"
+                    ApplicationName = "EDI.Demonstration.Chapter4"
+                    BpelCompliance = "True"
+                    GenerateDebuggingInformation = "False"
+                    EmbedTrackingInformation = "True"
+                    TreatWarningsAsErrors = "False"
+                    WarningLevel = "4"
+                    OutputPath = "bin\Deployment\"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Name = "System.configuration"
+                    AssemblyName = "System.Configuration"
+                />
+                <Reference
+                    Name = "Microsoft.BizTalk.DefaultPipelines"
+                    AssemblyName = "Microsoft.BizTalk.DefaultPipelines"
+                />
+                <Reference
+                    Name = "Microsoft.BizTalk.GlobalPropertySchemas"
+                    AssemblyName = "Microsoft.BizTalk.GlobalPropertySchemas"
+                />
+                <Reference
+                    Name = "Microsoft.BizTalk.Edi.BaseArtifacts"
+                    AssemblyName = "Microsoft.BizTalk.Edi.BaseArtifacts"
+                    HintPath = "..\..\..\Program Files\Microsoft BizTalk Server 2006\Microsoft.BizTalk.Edi.BaseArtifacts.dll"
+                />
+                <Reference
+                    Name = "Apress.Integration.Generic.ExceptionHandler"
+                    AssemblyName = "Apress.Integration.Generic.ExceptionHandler"
+                    HintPath = "..\Apress.Integration.Generic.ExceptionHandler\bin\Deployment\Apress.Integration.Generic.ExceptionHandler.dll"
+                />
+                <Reference
+                    Name = "Microsoft.BizTalk.Edi.EdiPipelines"
+                    AssemblyName = "Microsoft.BizTalk.Edi.EdiPipelines"
+                    HintPath = "..\..\..\Program Files\Microsoft BizTalk Server 2006\Microsoft.BizTalk.Edi.EdiPipelines.dll"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "Process864_Extended.odx"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "X12_00401_864.xsd"
+                    BuildAction = "Compile"
+                    Namespace = "Apress.Integration.EDI864.Common"
+                    Type = "X12_00401_864"
+                />
+            </Include>
+        </Files>
+    </BIZTALK>
+</VisualStudioProject>
+

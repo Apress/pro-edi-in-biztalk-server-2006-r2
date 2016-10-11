@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2007-06-16T09:58:13.890625-06:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:EDI.Demonstration.Chapter2]" Version="" Culture="" PublicKeyToken="" FullName="[Application:EDI.Demonstration.Chapter2], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="Apress.Integration.EDI810.CompanyX.X12_00401_810_CompanyX" RootName="X12_00401_810" AssemblyQualifiedName="Apress.Integration.EDI810.CompanyX.X12_00401_810_CompanyX,Apress.Integration.EDI810.CompanyX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=db2b0fb9898835dc" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Apress.Integration.EDI810.CompanyX" Version="1.0.0.0" Culture="neutral" PublicKeyToken="db2b0fb9898835dc" FullName="Apress.Integration.EDI810.CompanyX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=db2b0fb9898835dc">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="#" Version="0.0" Culture="neutral" PublicKeyToken="" FullName="#, Version=0.0, Culture=neutral, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="EDI.Demonstration.Example.ValidatingTradingPartner.FILE.810" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>C:\Apress.Integration\Chapter 2\Drops\Outgoing - Validating Trading Partner - EDI\%MessageID%.txt</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.txt&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-06-06T06:00:00</FromTime>
+        <ToTime>2007-06-07T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-06-06T06:00:00</FromTime>
+        <ToTime>2007-06-07T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="EDI.Demonstration.Example.ValidatingTradingPartner.FILE.810" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter2</ApplicationName>
+    </SendPort>
+    <SendPort Name="EDI.Demonstration.Example.TradingPartnerAsSender.FILE.ACK" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>C:\Apress.Integration\Chapter 2\Drops\Outgoing - Trading Partner as Sender - ACK\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-06-07T06:00:00</FromTime>
+        <ToTime>2007-06-08T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-06-07T06:00:00</FromTime>
+        <ToTime>2007-06-08T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Edi/X12#X12_997_Root" /&gt;
+  &lt;/Group&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Edi/X12#X12_TA1_Root" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter2</ApplicationName>
+    </SendPort>
+    <SendPort Name="EDI.Demonstration.Example.TradingPartnerAsSender.FILE.810" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>C:\Apress.Integration\Chapter 2\Drops\Outgoing - Trading Partner as Sender - EDI\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-06-07T06:00:00</FromTime>
+        <ToTime>2007-06-08T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-06-07T06:00:00</FromTime>
+        <ToTime>2007-06-08T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="EDI.Demonstration.Example.TradingPartnerAsSender.FILE.810" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter2</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="EDI.Demonstration.Example.ValidatingTradingPartner.FILE.810" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="FileReceive">
+          <Description xsi:nil="true" />
+          <Address>C:\Apress.Integration\Chapter 2\Drops\Incoming - Validating Trading Partner - XML\*.xml</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2007-06-06T06:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2007-06-07T05:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-06-05T18:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-06-06T18:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.xml&lt;/FileMask&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter2</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="EDI.Demonstration.Example.TradingPartnerAsSender.FILE.810" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="TradingPartnerAsSender">
+          <Description xsi:nil="true" />
+          <Address>C:\Apress.Integration\Chapter 2\Drops\Incoming - Trading Partner as Sender - EDI\*.txt</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2007-06-07T06:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2007-06-08T05:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-06-06T18:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-06-07T18:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.txt&lt;/FileMask&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter2</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection>
+    <Party Name="CompanyX">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="CompanyX" IsAutoCreated="true" />
+        <PartyAlias Name="Mutually defined" Qualifier="ZZZ" Value="COMPX789" IsAutoCreated="false" />
+      </Aliases>
+      <SendPorts>
+        <SendPortRef Name="EDI.Demonstration.Example.ValidatingTradingPartner.FILE.810" />
+      </SendPorts>
+      <SignatureCert xsi:nil="true" />
+      <EdiData>
+        <PartyEDIProperties PartyName="CompanyX">
+          <PartnerAgreement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <Contacts />
+            <AgreementStartDate>2007-06-07T13:26:00-06:00</AgreementStartDate>
+            <AgreementEndDate>2007-06-07T13:26:00-06:00</AgreementEndDate>
+            <Text1 />
+            <Text2 />
+            <Agreement>{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}
+\viewkind4\uc1\pard\f0\fs17\par
+}
+</Agreement>
+            <ActivateStatusReporting>true</ActivateStatusReporting>
+            <StoreTransactionSet>true</StoreTransactionSet>
+          </PartnerAgreement>
+          <PartnerEdifact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <PartnerEdifactReceiverGroups />
+            <PartnerEdifactSenderGroups>
+              <anyType xsi:type="PartnerEdifactSenderGroupUpdatable">
+                <IsSender>true</IsSender>
+                <PartyName>CompanyX</PartyName>
+                <TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006</TargetNamespace>
+                <UngDefaultSetting>true</UngDefaultSetting>
+              </anyType>
+            </PartnerEdifactSenderGroups>
+            <UnaGenerateSegment>true</UnaGenerateSegment>
+            <Una1>:</Una1>
+            <Una2>+</Una2>
+            <Una3>,</Una3>
+            <Una4>?</Una4>
+            <Una5>*</Una5>
+            <Una6>'</Una6>
+            <Una6Suffix>None</Una6Suffix>
+            <Unb1Id>UNOB</Unb1Id>
+            <Unb1Version>1</Unb1Version>
+            <Unb5CheckDup>true</Unb5CheckDup>
+            <Unb5DupValidity>30</Unb5DupValidity>
+            <Unb5>1</Unb5>
+            <Unb9>0</Unb9>
+            <Unb11>false</Unb11>
+            <UngCreateSegments>false</UngCreateSegments>
+            <Ung5>1</Ung5>
+            <Ung5CheckDup>false</Ung5CheckDup>
+            <UnhApplyNewId>true</UnhApplyNewId>
+            <UnhCheckDup>false</UnhCheckDup>
+            <UnhRefNumber>1</UnhRefNumber>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerEdifact>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <RouteAcktoSendPipeline>true</RouteAcktoSendPipeline>
+            <SendTechnicalAck>false</SendTechnicalAck>
+            <DontBatchTechnicalAck>false</DontBatchTechnicalAck>
+            <SendFunctionalAck>false</SendFunctionalAck>
+            <ExpectFunctionalAck>false</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>false</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>true</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>true</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>Edifact</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerEdifact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <PartnerEdifactReceiverGroups />
+            <PartnerEdifactSenderGroups />
+            <UnaGenerateSegment>true</UnaGenerateSegment>
+            <Una1>:</Una1>
+            <Una2>+</Una2>
+            <Una3>,</Una3>
+            <Una4>?</Una4>
+            <Una5>*</Una5>
+            <Una6>'</Una6>
+            <Una6Suffix>None</Una6Suffix>
+            <Unb1Id>UNOB</Unb1Id>
+            <Unb1Version>1</Unb1Version>
+            <Unb5CheckDup>true</Unb5CheckDup>
+            <Unb5DupValidity>30</Unb5DupValidity>
+            <Unb5>1</Unb5>
+            <Unb9>0</Unb9>
+            <Unb11>false</Unb11>
+            <UngCreateSegments>false</UngCreateSegments>
+            <Ung5>1</Ung5>
+            <Ung5CheckDup>false</Ung5CheckDup>
+            <UnhApplyNewId>true</UnhApplyNewId>
+            <UnhCheckDup>false</UnhCheckDup>
+            <UnhRefNumber>1</UnhRefNumber>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerEdifact>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <RouteAcktoSendPipeline>true</RouteAcktoSendPipeline>
+            <SendTechnicalAck>false</SendTechnicalAck>
+            <DontBatchTechnicalAck>false</DontBatchTechnicalAck>
+            <SendFunctionalAck>false</SendFunctionalAck>
+            <ExpectFunctionalAck>false</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>false</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>true</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>true</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>Edifact</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerX12 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <PartnerX12ReceiverGroups />
+            <PartnerX12SenderGroups>
+              <anyType xsi:type="PartnerX12SenderGroupUpdatable">
+                <IsSender>true</IsSender>
+                <PartyName>CompanyX</PartyName>
+                <GSTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</GSTargetNamespace>
+                <GSDefaultSetting>true</GSDefaultSetting>
+              </anyType>
+            </PartnerX12SenderGroups>
+            <Isa5>ZZ</Isa5>
+            <Isa6>XXXXXX</Isa6>
+            <Isa7>ZZ</Isa7>
+            <Isa8>XXXXXX</Isa8>
+            <Isa11UseAsRepSep>false</Isa11UseAsRepSep>
+            <Isa11>U</Isa11>
+            <Isa12>00401</Isa12>
+            <Isa13>1</Isa13>
+            <Isa13CheckDup>true</Isa13CheckDup>
+            <Isa13DupValidity>30</Isa13DupValidity>
+            <Isa14>false</Isa14>
+            <Isa15>T</Isa15>
+            <DESeparator>*</DESeparator>
+            <CESeparator>:</CESeparator>
+            <SegmentTerminator>~</SegmentTerminator>
+            <SegmentTerminatorSuffix>None</SegmentTerminatorSuffix>
+            <GS6CheckDup>false</GS6CheckDup>
+            <GS6>1</GS6>
+            <TSCheckDup>false</TSCheckDup>
+            <TSApplyNewId>true</TSApplyNewId>
+            <TSControlNumber>2</TSControlNumber>
+            <X12CharSet>UTF8</X12CharSet>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerX12>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <RouteAcktoSendPipeline>false</RouteAcktoSendPipeline>
+            <SendTechnicalAck>false</SendTechnicalAck>
+            <DontBatchTechnicalAck>true</DontBatchTechnicalAck>
+            <SendFunctionalAck>false</SendFunctionalAck>
+            <ExpectFunctionalAck>false</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>false</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>false</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>false</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>X12</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerX12 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <PartnerX12ReceiverGroups>
+              <anyType xsi:type="PartnerX12ReceiverGroupUpdatable">
+                <IsSender>false</IsSender>
+                <PartyName>CompanyX</PartyName>
+                <GSTransactionId>810</GSTransactionId>
+                <GSVersion>00401</GSVersion>
+                <GSTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</GSTargetNamespace>
+                <GS1>IN</GS1>
+                <GS2>APRESS1234</GS2>
+                <GS3>COMPX789</GS3>
+                <GS4>CCYYMMDD</GS4>
+                <GS5>HHMM</GS5>
+                <GS7>X</GS7>
+                <GS8>004010</GS8>
+                <GSDefaultSetting>true</GSDefaultSetting>
+              </anyType>
+            </PartnerX12ReceiverGroups>
+            <PartnerX12SenderGroups />
+            <Isa5>ZZ</Isa5>
+            <Isa6>APRESS1234</Isa6>
+            <Isa7>ZZ</Isa7>
+            <Isa8>COMPX789</Isa8>
+            <Isa11UseAsRepSep>false</Isa11UseAsRepSep>
+            <Isa11>U</Isa11>
+            <Isa12>00401</Isa12>
+            <Isa13>28</Isa13>
+            <Isa13CheckDup>true</Isa13CheckDup>
+            <Isa13DupValidity>30</Isa13DupValidity>
+            <Isa14>false</Isa14>
+            <Isa15>T</Isa15>
+            <DESeparator>*</DESeparator>
+            <CESeparator>&gt;</CESeparator>
+            <SegmentTerminator>~</SegmentTerminator>
+            <SegmentTerminatorSuffix>Crlf</SegmentTerminatorSuffix>
+            <GS6CheckDup>false</GS6CheckDup>
+            <GS6>28</GS6>
+            <TSCheckDup>false</TSCheckDup>
+            <TSApplyNewId>true</TSApplyNewId>
+            <TSControlNumber>28</TSControlNumber>
+            <X12CharSet>UTF8</X12CharSet>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerX12>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <RouteAcktoSendPipeline>true</RouteAcktoSendPipeline>
+            <SendTechnicalAck>false</SendTechnicalAck>
+            <DontBatchTechnicalAck>false</DontBatchTechnicalAck>
+            <SendFunctionalAck>true</SendFunctionalAck>
+            <ExpectFunctionalAck>true</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>false</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>true</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>true</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>X12</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerBatchUpdatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <FilterGroups />
+            <BatchingBase>Schedule</BatchingBase>
+            <StartDateTime xsi:nil="true" />
+            <EndDateTime xsi:nil="true" />
+            <OccurrenceCount xsi:nil="true" />
+            <SendEmptyBatchSignal xsi:nil="true" />
+            <OccurrencePattern>Day</OccurrencePattern>
+            <Frequency xsi:nil="true" />
+            <OccursAt xsi:nil="true" />
+            <WeeklyDays>None</WeeklyDays>
+            <MaxCountInGroup xsi:nil="true" />
+            <MaxCountInInterchange xsi:nil="true" />
+            <MessageType>X12</MessageType>
+          </PartnerBatchUpdatable>
+          <PartnerBatchUpdatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <FilterGroups />
+            <BatchingBase>Schedule</BatchingBase>
+            <StartDateTime xsi:nil="true" />
+            <EndDateTime xsi:nil="true" />
+            <OccurrenceCount xsi:nil="true" />
+            <SendEmptyBatchSignal xsi:nil="true" />
+            <OccurrencePattern>Day</OccurrencePattern>
+            <Frequency xsi:nil="true" />
+            <OccursAt xsi:nil="true" />
+            <WeeklyDays>None</WeeklyDays>
+            <MaxCountInGroup xsi:nil="true" />
+            <MaxCountInInterchange xsi:nil="true" />
+            <MessageType>Edifact</MessageType>
+          </PartnerBatchUpdatable>
+          <PartnerAS2CommonUpdatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <ActivateStatusReporting>false</ActivateStatusReporting>
+            <CrlVerification>false</CrlVerification>
+            <IgnoreSSLCertificateNameMismatch>false</IgnoreSSLCertificateNameMismatch>
+            <Expect100Continue>true</Expect100Continue>
+            <KeepHttpConnectionAlive>true</KeepHttpConnectionAlive>
+            <UnfoldHttpHeaders>true</UnfoldHttpHeaders>
+          </PartnerAS2CommonUpdatable>
+          <PartnerAS2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <MessageEncryption>false</MessageEncryption>
+            <MessageSigning>false</MessageSigning>
+            <MessageCompression>false</MessageCompression>
+            <ApplyMimePropertiesFromMessage>true</ApplyMimePropertiesFromMessage>
+            <SignMdnifOptional>false</SignMdnifOptional>
+            <MdnRequired>false</MdnRequired>
+            <SynchronousMdn>true</SynchronousMdn>
+            <AS2From>BizTalk</AS2From>
+            <AS2To>CompanyX</AS2To>
+            <SignedMdn>true</SignedMdn>
+            <SignedReceiptMicAlgorithm>MD5</SignedReceiptMicAlgorithm>
+            <StoreInNativeFormat>false</StoreInNativeFormat>
+            <StoreInWireFormat>false</StoreInWireFormat>
+            <StoreMdn>false</StoreMdn>
+            <ProcessMdnToMsgBox>false</ProcessMdnToMsgBox>
+            <MessageContentType>text/plain</MessageContentType>
+          </PartnerAS2>
+          <PartnerAS2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyX</PartyName>
+            <MessageEncryption>false</MessageEncryption>
+            <MessageSigning>false</MessageSigning>
+            <MessageCompression>false</MessageCompression>
+            <ApplyMimePropertiesFromMessage>true</ApplyMimePropertiesFromMessage>
+            <SignMdnifOptional>false</SignMdnifOptional>
+            <MdnRequired>false</MdnRequired>
+            <SynchronousMdn>true</SynchronousMdn>
+            <AS2From>BizTalk</AS2From>
+            <AS2To>CompanyX</AS2To>
+            <SignedMdn>true</SignedMdn>
+            <SignedReceiptMicAlgorithm>MD5</SignedReceiptMicAlgorithm>
+            <StoreInNativeFormat>false</StoreInNativeFormat>
+            <StoreInWireFormat>false</StoreInWireFormat>
+            <StoreMdn>false</StoreMdn>
+            <ProcessMdnToMsgBox>false</ProcessMdnToMsgBox>
+            <MessageContentType>text/plain</MessageContentType>
+          </PartnerAS2>
+        </PartyEDIProperties>
+      </EdiData>
+      <CustomData xsi:nil="true" />
+    </Party>
+    <Party Name="CompanyA">
+      <Aliases>
+        <PartyAlias Name="Organization" Qualifier="OrganizationName" Value="CompanyA" IsAutoCreated="true" />
+        <PartyAlias Name="D-U-N-S (Dun &amp; Bradstreet)" Qualifier="1" Value="CA000CA" IsAutoCreated="false" />
+      </Aliases>
+      <SendPorts>
+        <SendPortRef Name="EDI.Demonstration.Example.TradingPartnerAsSender.FILE.810" />
+      </SendPorts>
+      <SignatureCert xsi:nil="true" />
+      <EdiData>
+        <PartyEDIProperties PartyName="CompanyA">
+          <PartnerAgreement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <Contacts />
+            <AgreementStartDate>2007-06-07T16:10:00-06:00</AgreementStartDate>
+            <AgreementEndDate>2007-06-07T16:10:00-06:00</AgreementEndDate>
+            <Text1 />
+            <Text2 />
+            <Agreement>{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}
+\viewkind4\uc1\pard\f0\fs17\par
+}
+</Agreement>
+            <ActivateStatusReporting>true</ActivateStatusReporting>
+            <StoreTransactionSet>true</StoreTransactionSet>
+          </PartnerAgreement>
+          <PartnerEdifact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <PartnerEdifactReceiverGroups />
+            <PartnerEdifactSenderGroups>
+              <anyType xsi:type="PartnerEdifactSenderGroupUpdatable">
+                <IsSender>true</IsSender>
+                <PartyName>CompanyA</PartyName>
+                <TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006</TargetNamespace>
+                <UngDefaultSetting>true</UngDefaultSetting>
+              </anyType>
+            </PartnerEdifactSenderGroups>
+            <UnaGenerateSegment>true</UnaGenerateSegment>
+            <Una1>:</Una1>
+            <Una2>+</Una2>
+            <Una3>,</Una3>
+            <Una4>?</Una4>
+            <Una5>*</Una5>
+            <Una6>'</Una6>
+            <Una6Suffix>None</Una6Suffix>
+            <Unb1Id>UNOB</Unb1Id>
+            <Unb1Version>1</Unb1Version>
+            <Unb5CheckDup>true</Unb5CheckDup>
+            <Unb5DupValidity>30</Unb5DupValidity>
+            <Unb5>1</Unb5>
+            <Unb9>0</Unb9>
+            <Unb11>false</Unb11>
+            <UngCreateSegments>false</UngCreateSegments>
+            <Ung5>1</Ung5>
+            <Ung5CheckDup>false</Ung5CheckDup>
+            <UnhApplyNewId>true</UnhApplyNewId>
+            <UnhCheckDup>false</UnhCheckDup>
+            <UnhRefNumber>1</UnhRefNumber>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerEdifact>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <RouteAcktoSendPipeline>true</RouteAcktoSendPipeline>
+            <SendTechnicalAck>false</SendTechnicalAck>
+            <DontBatchTechnicalAck>false</DontBatchTechnicalAck>
+            <SendFunctionalAck>false</SendFunctionalAck>
+            <ExpectFunctionalAck>false</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>false</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>true</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>true</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>Edifact</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerEdifact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <PartnerEdifactReceiverGroups />
+            <PartnerEdifactSenderGroups />
+            <UnaGenerateSegment>true</UnaGenerateSegment>
+            <Una1>:</Una1>
+            <Una2>+</Una2>
+            <Una3>,</Una3>
+            <Una4>?</Una4>
+            <Una5>*</Una5>
+            <Una6>'</Una6>
+            <Una6Suffix>None</Una6Suffix>
+            <Unb1Id>UNOB</Unb1Id>
+            <Unb1Version>1</Unb1Version>
+            <Unb5CheckDup>true</Unb5CheckDup>
+            <Unb5DupValidity>30</Unb5DupValidity>
+            <Unb5>1</Unb5>
+            <Unb9>0</Unb9>
+            <Unb11>false</Unb11>
+            <UngCreateSegments>false</UngCreateSegments>
+            <Ung5>1</Ung5>
+            <Ung5CheckDup>false</Ung5CheckDup>
+            <UnhApplyNewId>true</UnhApplyNewId>
+            <UnhCheckDup>false</UnhCheckDup>
+            <UnhRefNumber>1</UnhRefNumber>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerEdifact>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <RouteAcktoSendPipeline>true</RouteAcktoSendPipeline>
+            <SendTechnicalAck>false</SendTechnicalAck>
+            <DontBatchTechnicalAck>false</DontBatchTechnicalAck>
+            <SendFunctionalAck>false</SendFunctionalAck>
+            <ExpectFunctionalAck>false</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>false</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>true</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>true</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>Edifact</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerX12 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <PartnerX12ReceiverGroups />
+            <PartnerX12SenderGroups>
+              <anyType xsi:type="PartnerX12SenderGroupUpdatable">
+                <IsSender>true</IsSender>
+                <PartyName>CompanyA</PartyName>
+                <GSTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</GSTargetNamespace>
+                <GSDefaultSetting>true</GSDefaultSetting>
+              </anyType>
+              <anyType xsi:type="PartnerX12SenderGroupUpdatable">
+                <IsSender>true</IsSender>
+                <PartyName>CompanyA</PartyName>
+                <GSTransactionId>810</GSTransactionId>
+                <GS2>CA000CA</GS2>
+                <GSTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</GSTargetNamespace>
+                <GSDefaultSetting>false</GSDefaultSetting>
+              </anyType>
+            </PartnerX12SenderGroups>
+            <Isa5>01</Isa5>
+            <Isa6>CA000CA</Isa6>
+            <Isa7>ZZ</Isa7>
+            <Isa8>APRESS1234</Isa8>
+            <Isa11UseAsRepSep>false</Isa11UseAsRepSep>
+            <Isa11>U</Isa11>
+            <Isa12>00401</Isa12>
+            <Isa13>1</Isa13>
+            <Isa13CheckDup>false</Isa13CheckDup>
+            <Isa13DupValidity>30</Isa13DupValidity>
+            <Isa14>false</Isa14>
+            <Isa15>T</Isa15>
+            <DESeparator>*</DESeparator>
+            <CESeparator>:</CESeparator>
+            <SegmentTerminator>~</SegmentTerminator>
+            <SegmentTerminatorSuffix>None</SegmentTerminatorSuffix>
+            <GS6CheckDup>false</GS6CheckDup>
+            <GS6>1</GS6>
+            <TSCheckDup>false</TSCheckDup>
+            <TSApplyNewId>true</TSApplyNewId>
+            <TSControlNumber>28</TSControlNumber>
+            <X12CharSet>UTF8</X12CharSet>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerX12>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <RouteAcktoSendPipeline>false</RouteAcktoSendPipeline>
+            <SendTechnicalAck>true</SendTechnicalAck>
+            <DontBatchTechnicalAck>true</DontBatchTechnicalAck>
+            <SendFunctionalAck>true</SendFunctionalAck>
+            <ExpectFunctionalAck>true</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>true</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>true</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>true</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>X12</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerX12 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <PartnerX12ReceiverGroups>
+              <anyType xsi:type="PartnerX12ReceiverGroupUpdatable">
+                <IsSender>false</IsSender>
+                <PartyName>CompanyA</PartyName>
+                <GSTransactionId>810</GSTransactionId>
+                <GSVersion>04010</GSVersion>
+                <GSTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</GSTargetNamespace>
+                <GS1>IN</GS1>
+                <GS2>APRESS1234</GS2>
+                <GS3>CA000CA</GS3>
+                <GS4>CCYYMMDD</GS4>
+                <GS5>HHMM</GS5>
+                <GS7>X</GS7>
+                <GS8>04010</GS8>
+                <GSDefaultSetting>true</GSDefaultSetting>
+              </anyType>
+            </PartnerX12ReceiverGroups>
+            <PartnerX12SenderGroups />
+            <Isa5>ZZ</Isa5>
+            <Isa6>APRESS1234</Isa6>
+            <Isa7>01</Isa7>
+            <Isa8>CA000CA</Isa8>
+            <Isa11UseAsRepSep>false</Isa11UseAsRepSep>
+            <Isa11>U</Isa11>
+            <Isa12>00401</Isa12>
+            <Isa13>12</Isa13>
+            <Isa13CheckDup>true</Isa13CheckDup>
+            <Isa13DupValidity>30</Isa13DupValidity>
+            <Isa14>false</Isa14>
+            <Isa15>T</Isa15>
+            <DESeparator>*</DESeparator>
+            <CESeparator>&gt;</CESeparator>
+            <SegmentTerminator>~</SegmentTerminator>
+            <SegmentTerminatorSuffix>Crlf</SegmentTerminatorSuffix>
+            <GS6CheckDup>false</GS6CheckDup>
+            <GS6>8</GS6>
+            <TSCheckDup>false</TSCheckDup>
+            <TSApplyNewId>true</TSApplyNewId>
+            <TSControlNumber>8</TSControlNumber>
+            <X12CharSet>UTF8</X12CharSet>
+            <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+          </PartnerX12>
+          <PartnerAckValidation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <RouteAcktoSendPipeline>true</RouteAcktoSendPipeline>
+            <SendTechnicalAck>false</SendTechnicalAck>
+            <DontBatchTechnicalAck>false</DontBatchTechnicalAck>
+            <SendFunctionalAck>false</SendFunctionalAck>
+            <ExpectFunctionalAck>false</ExpectFunctionalAck>
+            <DontBatchFunctionalAck>false</DontBatchFunctionalAck>
+            <GenerateLoopForValidMessagesInAck>false</GenerateLoopForValidMessagesInAck>
+            <ValidateEdiType>true</ValidateEdiType>
+            <IgnoreInvalidChars>false</IgnoreInvalidChars>
+            <ValidateExtended>false</ValidateExtended>
+            <AllowTrailingDelimiters>false</AllowTrailingDelimiters>
+            <GenerateTrailingDelimiters>false</GenerateTrailingDelimiters>
+            <CreateEmptyXmlTagsForTrailingSeparators>true</CreateEmptyXmlTagsForTrailingSeparators>
+            <MaskSecurityInfo>true</MaskSecurityInfo>
+            <ConvertImpliedDecimal>false</ConvertImpliedDecimal>
+            <PreserveBatch>TransactionSetXML</PreserveBatch>
+            <EdiEncoding>X12</EdiEncoding>
+          </PartnerAckValidation>
+          <PartnerBatchUpdatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <FilterGroups />
+            <BatchingBase>Schedule</BatchingBase>
+            <StartDateTime xsi:nil="true" />
+            <EndDateTime xsi:nil="true" />
+            <OccurrenceCount xsi:nil="true" />
+            <SendEmptyBatchSignal xsi:nil="true" />
+            <OccurrencePattern>Day</OccurrencePattern>
+            <Frequency xsi:nil="true" />
+            <OccursAt xsi:nil="true" />
+            <WeeklyDays>None</WeeklyDays>
+            <MaxCountInGroup xsi:nil="true" />
+            <MaxCountInInterchange xsi:nil="true" />
+            <MessageType>X12</MessageType>
+          </PartnerBatchUpdatable>
+          <PartnerBatchUpdatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <FilterGroups />
+            <BatchingBase>Schedule</BatchingBase>
+            <StartDateTime xsi:nil="true" />
+            <EndDateTime xsi:nil="true" />
+            <OccurrenceCount xsi:nil="true" />
+            <SendEmptyBatchSignal xsi:nil="true" />
+            <OccurrencePattern>Day</OccurrencePattern>
+            <Frequency xsi:nil="true" />
+            <OccursAt xsi:nil="true" />
+            <WeeklyDays>None</WeeklyDays>
+            <MaxCountInGroup xsi:nil="true" />
+            <MaxCountInInterchange xsi:nil="true" />
+            <MessageType>Edifact</MessageType>
+          </PartnerBatchUpdatable>
+          <PartnerAS2CommonUpdatable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <ActivateStatusReporting>false</ActivateStatusReporting>
+            <CrlVerification>false</CrlVerification>
+            <IgnoreSSLCertificateNameMismatch>false</IgnoreSSLCertificateNameMismatch>
+            <Expect100Continue>true</Expect100Continue>
+            <KeepHttpConnectionAlive>true</KeepHttpConnectionAlive>
+            <UnfoldHttpHeaders>true</UnfoldHttpHeaders>
+          </PartnerAS2CommonUpdatable>
+          <PartnerAS2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>true</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <MessageEncryption>false</MessageEncryption>
+            <MessageSigning>false</MessageSigning>
+            <MessageCompression>false</MessageCompression>
+            <ApplyMimePropertiesFromMessage>true</ApplyMimePropertiesFromMessage>
+            <SignMdnifOptional>false</SignMdnifOptional>
+            <MdnRequired>false</MdnRequired>
+            <SynchronousMdn>true</SynchronousMdn>
+            <AS2From>BizTalk</AS2From>
+            <AS2To>CompanyA</AS2To>
+            <SignedMdn>true</SignedMdn>
+            <SignedReceiptMicAlgorithm>MD5</SignedReceiptMicAlgorithm>
+            <StoreInNativeFormat>false</StoreInNativeFormat>
+            <StoreInWireFormat>false</StoreInWireFormat>
+            <StoreMdn>false</StoreMdn>
+            <ProcessMdnToMsgBox>false</ProcessMdnToMsgBox>
+            <MessageContentType>text/plain</MessageContentType>
+          </PartnerAS2>
+          <PartnerAS2 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <IsSender>false</IsSender>
+            <PartyName>CompanyA</PartyName>
+            <MessageEncryption>false</MessageEncryption>
+            <MessageSigning>false</MessageSigning>
+            <MessageCompression>false</MessageCompression>
+            <ApplyMimePropertiesFromMessage>true</ApplyMimePropertiesFromMessage>
+            <SignMdnifOptional>false</SignMdnifOptional>
+            <MdnRequired>false</MdnRequired>
+            <SynchronousMdn>true</SynchronousMdn>
+            <AS2From>BizTalk</AS2From>
+            <AS2To>CompanyA</AS2To>
+            <SignedMdn>true</SignedMdn>
+            <SignedReceiptMicAlgorithm>MD5</SignedReceiptMicAlgorithm>
+            <StoreInNativeFormat>false</StoreInNativeFormat>
+            <StoreInWireFormat>false</StoreInWireFormat>
+            <StoreMdn>false</StoreMdn>
+            <ProcessMdnToMsgBox>false</ProcessMdnToMsgBox>
+            <MessageContentType>text/plain</MessageContentType>
+          </PartnerAS2>
+        </PartyEDIProperties>
+      </EdiData>
+      <CustomData xsi:nil="true" />
+    </Party>
+  </PartyCollection>
+  <EdiGlobalProperties>
+    <EDIGlobalProperties>
+      <GlobalCommon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <IsSender>false</IsSender>
+        <ActivateStatusReporting>true</ActivateStatusReporting>
+        <StoreTransactionSet>true</StoreTransactionSet>
+        <LogEngineErrors>true</LogEngineErrors>
+      </GlobalCommon>
+      <GlobalEdiFact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <IsSender>true</IsSender>
+        <UnaGenerateSegment>true</UnaGenerateSegment>
+        <Una1>:</Una1>
+        <Una2>+</Una2>
+        <Una3>,</Una3>
+        <Una4>?</Una4>
+        <Una5>*</Una5>
+        <Una6>'</Una6>
+        <Una6Suffix>None</Una6Suffix>
+        <Unb1Id>UNOB</Unb1Id>
+        <Unb1Version>1</Unb1Version>
+        <Unb2Id>BTS-SENDER</Unb2Id>
+        <Unb2CodeQualifier>ZZZ</Unb2CodeQualifier>
+        <Unb3Id>RECEIVE-PARTNER</Unb3Id>
+        <Unb5>1</Unb5>
+        <Unb5CheckDup>false</Unb5CheckDup>
+        <Unb5DupValidity>30</Unb5DupValidity>
+        <Unb6Qualifier />
+        <Unb9>0</Unb9>
+        <Unb11>false</Unb11>
+        <UngCreateSegment>false</UngCreateSegment>
+        <Ung5>1</Ung5>
+        <Ung5CheckDup>false</Ung5CheckDup>
+        <GenerateContrlReceipt>false</GenerateContrlReceipt>
+        <GenerateContrlAck>false</GenerateContrlAck>
+        <UngNamespace>http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006</UngNamespace>
+        <UnhCheckDup>false</UnhCheckDup>
+        <UnhApplyNewId>true</UnhApplyNewId>
+        <UnhRefNumber>1</UnhRefNumber>
+        <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+      </GlobalEdiFact>
+      <GlobalEdiFact xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <IsSender>false</IsSender>
+        <UnaGenerateSegment>true</UnaGenerateSegment>
+        <Una1>:</Una1>
+        <Una2>+</Una2>
+        <Una3>,</Una3>
+        <Una4>?</Una4>
+        <Una5>*</Una5>
+        <Una6>'</Una6>
+        <Una6Suffix>None</Una6Suffix>
+        <Unb1Id>UNOB</Unb1Id>
+        <Unb1Version>1</Unb1Version>
+        <Unb2Id>BTS-SENDER</Unb2Id>
+        <Unb2CodeQualifier>ZZZ</Unb2CodeQualifier>
+        <Unb3Id>RECEIVE-PARTNER</Unb3Id>
+        <Unb5>1</Unb5>
+        <Unb5CheckDup>false</Unb5CheckDup>
+        <Unb5DupValidity>30</Unb5DupValidity>
+        <Unb6Qualifier />
+        <Unb9>0</Unb9>
+        <Unb11>false</Unb11>
+        <UngCreateSegment>false</UngCreateSegment>
+        <Ung5>1</Ung5>
+        <Ung5CheckDup>false</Ung5CheckDup>
+        <GenerateContrlReceipt>false</GenerateContrlReceipt>
+        <GenerateContrlAck>false</GenerateContrlAck>
+        <UngNamespace>http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006</UngNamespace>
+        <UnhCheckDup>false</UnhCheckDup>
+        <UnhApplyNewId>true</UnhApplyNewId>
+        <UnhRefNumber>1</UnhRefNumber>
+        <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+      </GlobalEdiFact>
+      <GlobalX12 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <IsSender>true</IsSender>
+        <Isa1>00</Isa1>
+        <Isa3>00</Isa3>
+        <Isa5>ZZ</Isa5>
+        <Isa6>BTS-SENDER</Isa6>
+        <Isa7>ZZ</Isa7>
+        <Isa8>RECEIVE-PARTNER</Isa8>
+        <Isa11UseAsRepSep>false</Isa11UseAsRepSep>
+        <Isa11>U</Isa11>
+        <Isa12>00401</Isa12>
+        <Isa13>1</Isa13>
+        <Isa13CheckDup>false</Isa13CheckDup>
+        <Isa13DupValidity>30</Isa13DupValidity>
+        <Isa14>false</Isa14>
+        <Isa15>T</Isa15>
+        <GSNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</GSNamespace>
+        <DESeparator>*</DESeparator>
+        <CESeparator>:</CESeparator>
+        <SegmentTerminator>~</SegmentTerminator>
+        <STSuffix>None</STSuffix>
+        <GS1>ZZ</GS1>
+        <GS2>BTS-SENDER</GS2>
+        <GS3>RECEIVE-APP</GS3>
+        <GS4>CCYYMMDD</GS4>
+        <GS5>HHMM</GS5>
+        <GS6>1</GS6>
+        <GS6CheckDup>false</GS6CheckDup>
+        <GS7>X</GS7>
+        <GS8>004010</GS8>
+        <TSCheckDup>false</TSCheckDup>
+        <TSApplyNewId>true</TSApplyNewId>
+        <TSControlNumber>4</TSControlNumber>
+        <GenerateTA1>true</GenerateTA1>
+        <Generate997>true</Generate997>
+        <X12CharSet>UTF8</X12CharSet>
+        <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+      </GlobalX12>
+      <GlobalX12 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+        <IsSender>false</IsSender>
+        <Isa1>00</Isa1>
+        <Isa2 />
+        <Isa3>00</Isa3>
+        <Isa4 />
+        <Isa5>ZZ</Isa5>
+        <Isa6>APRESS1234</Isa6>
+        <Isa7>ZZ</Isa7>
+        <Isa8>COMPX789</Isa8>
+        <Isa11UseAsRepSep>false</Isa11UseAsRepSep>
+        <Isa11>U</Isa11>
+        <Isa12>00401</Isa12>
+        <Isa13>4</Isa13>
+        <Isa13CheckDup>false</Isa13CheckDup>
+        <Isa13DupValidity>30</Isa13DupValidity>
+        <Isa14>false</Isa14>
+        <Isa15>T</Isa15>
+        <GSNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</GSNamespace>
+        <DESeparator>*</DESeparator>
+        <CESeparator>:</CESeparator>
+        <SegmentTerminator>~</SegmentTerminator>
+        <STSuffix>None</STSuffix>
+        <GS1>ZZ</GS1>
+        <GS2>BTS-SENDER</GS2>
+        <GS3>RECEIVE-APP</GS3>
+        <GS4>CCYYMMDD</GS4>
+        <GS5>HHMM</GS5>
+        <GS6>4</GS6>
+        <GS6CheckDup>false</GS6CheckDup>
+        <GS7>X</GS7>
+        <GS8>004010</GS8>
+        <TSCheckDup>false</TSCheckDup>
+        <TSApplyNewId>true</TSApplyNewId>
+        <TSControlNumber>4</TSControlNumber>
+        <GenerateTA1>false</GenerateTA1>
+        <Generate997>false</Generate997>
+        <X12CharSet>UTF8</X12CharSet>
+        <SetSequenceNumberFlag>None</SetSequenceNumberFlag>
+      </GlobalX12>
+    </EDIGlobalProperties>
+  </EdiGlobalProperties>
+</BindingInfo>

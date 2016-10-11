@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{EF7E3281-CD33-11D4-8326-00C04FA0CE8D}") = "Apress.Integration.EDIFACT.ServiceExtension", "Apress.Integration.EDIFACT.ServiceExtension\Apress.Integration.EDIFACT.ServiceExtension.btproj", "{E8A650ED-BC9B-4579-9A16-78CAA3419651}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deployment|.NET = Deployment|.NET
+		Development|.NET = Development|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E8A650ED-BC9B-4579-9A16-78CAA3419651}.Deployment|.NET.ActiveCfg = Deployment|.NET
+		{E8A650ED-BC9B-4579-9A16-78CAA3419651}.Deployment|.NET.Build.0 = Deployment|.NET
+		{E8A650ED-BC9B-4579-9A16-78CAA3419651}.Deployment|.NET.Deploy.0 = Deployment|.NET
+		{E8A650ED-BC9B-4579-9A16-78CAA3419651}.Development|.NET.ActiveCfg = Development|.NET
+		{E8A650ED-BC9B-4579-9A16-78CAA3419651}.Development|.NET.Build.0 = Development|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

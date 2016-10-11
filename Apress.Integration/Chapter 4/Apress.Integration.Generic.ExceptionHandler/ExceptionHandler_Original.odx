@@ -1,0 +1,136 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="f63ccdb6-2d24-40b5-8b02-8749f3ac5c66" LowerBound="1.1" HigherBound="33.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Apress.Integration.Generic.ExceptionHandler" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="0c60e384-0961-43b0-861b-466259623954" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Rec_Failed_Msg" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="8c880779-998e-492d-a1f9-b6f6f1d584c1" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="4425f58c-06e0-4308-96a7-a0cb295f28b1" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="1495a66d-da50-4566-8798-1087962ccd42" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="32.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ExceptionHandlerOrch" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="01dd8d06-0628-4f34-a9b6-43b5923de181" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="17.1" HigherBound="18.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strEntry" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7326f0f2-8a08-4f03-8e24-c58a087f5ebb" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strSource" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="427388ee-b7ae-4da7-90f9-dcdf6b0e5fed" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="16.1" HigherBound="17.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Msg_Incoming" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="3ba18be4-caa9-4095-bcd7-73fc7413e662" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="1451b48d-97dc-43b3-b276-9bbd83a07384" ParentLink="ServiceBody_Statement" LowerBound="21.1" HigherBound="25.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Rec_Failed_Msg" />
+                    <om:Property Name="MessageName" Value="Msg_Incoming" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rec_Failed_Msg" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="6f682497-9fa7-4689-9131-5c85f3777af8" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="ErrorReport.ErrorType" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Exists" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="3142ce9f-37ae-4424-b19f-5e8288ecd456" ParentLink="ServiceBody_Statement" LowerBound="25.1" HigherBound="30.1">
+                    <om:Property Name="Expression" Value="strSource = &quot;Demo Entry&quot;;&#xD;&#xA;strEntry = &quot;Failed Message Received.&quot;;&#xD;&#xA;strEntry = strEntry + &quot; Error Type is &quot; + Msg_Incoming(ErrorReport.ErrorType);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(strSource,strEntry);&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Exp_Log" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="1b5c3ed5-56f1-4fde-a868-746bd07da007" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Apress.Integration.Generic.ExceptionHandler.PortType_Rec_Failed_Msg" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Rec_Failed_Msg" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="b5f37c28-5c50-4106-bebe-7f0f5f791af1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Apress.Integration.Generic.ExceptionHandler
+{
+    internal porttype PortType_Rec_Failed_Msg
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service ExceptionHandlerOrch
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements PortType_Rec_Failed_Msg Port_Rec_Failed_Msg;
+        message System.Xml.XmlDocument Msg_Incoming;
+        System.String strEntry;
+        System.String strSource;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1451b48d-97dc-43b3-b276-9bbd83a07384")]
+            activate ((ErrorReport.ErrorType exists))receive (Port_Rec_Failed_Msg.Operation_1, Msg_Incoming);
+            strEntry = "";
+            strSource = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3142ce9f-37ae-4424-b19f-5e8288ecd456")]
+            strSource = "Demo Entry";
+            strEntry = "Failed Message Received.";
+            strEntry = strEntry + " Error Type is " + Msg_Incoming(ErrorReport.ErrorType);
+            System.Diagnostics.EventLog.WriteEntry(strSource,strEntry);
+        }
+    }
+}
+

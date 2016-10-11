@@ -1,0 +1,326 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="297d43b8-4970-48b6-ae59-04102dbabbfa" LowerBound="1.1" HigherBound="110.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Apress.Integration.EDI864.Common" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="95ec5f4d-c407-41d5-811c-295348f78e04" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Receive864" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1acba405-c261-4a8d-87b9-b023af11828c" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="e02d90d7-ed22-4f7e-be50-db150b64590a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d7ce1051-6452-4f89-a6ce-73ea68a14c33" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SendCustomError" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="0c936876-db4b-43ef-87f6-ef5d4cfd1b37" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="f7268c47-7230-47d5-8509-6a0bec196726" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.72">
+                    <om:Property Name="Ref" Value="Apress.Integration.Generic.ExceptionHandler.CustomException" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="0a104d92-ecc7-4ee6-97dc-1a3771fc0c3c" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="109.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Process864Orch" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="528832fb-a04b-4971-8f55-66630fa236af" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="str864TextMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a44f4ae1-c11f-4bca-9e89-ccac8fb6c2ae" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="33.1" HigherBound="34.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strXMLDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5843c112-af6f-43ef-9551-918604282744" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlTempDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="217822af-6428-4ccc-a364-11de23f41716" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="Apress.Integration.EDI864.Common.CorrelationType_ErrorType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Correlation_CustomError" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="5cf0adf3-0151-42fc-8a11-00ce6a16a563" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="106.70" HigherBound="106.104">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="77c5ad63-1ae6-4aa0-8afe-e480c707c1b3" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c9df4b74-cc32-4176-bf96-1381dcf64afa" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Msg_Incoming" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="39e696d6-4775-4ae7-ac03-afb61a0525db" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="Apress.Integration.Generic.ExceptionHandler.CustomException" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Msg_CustomError" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="3f35d3b9-ea19-4994-82db-611dbe41589e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="65609681-070a-4ed3-9114-7a957467c877" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="42.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Receive864" />
+                    <om:Property Name="MessageName" Value="Msg_Incoming" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Rec_864" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="24b9e66f-8f9f-4be7-9f9c-4e32e9932022" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="EDI.ST01" />
+                        <om:Property Name="RHS" Value="&quot;864&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="3873b283-af8a-455c-88d7-1a1cf36aca5d" ParentLink="ServiceBody_Statement" LowerBound="42.1" HigherBound="45.1">
+                    <om:Property Name="Expression" Value="str864TextMessage = xpath(Msg_Incoming,&quot;string(//MSG01)&quot;);&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Exp_Get_Msg" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="f2eb55f6-28a4-4311-9a3b-6c51cf3ae21a" ParentLink="ServiceBody_Statement" LowerBound="45.1" HigherBound="50.1">
+                    <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;864 Received&quot;&#xD;&#xA;                                        ,&quot;Demonstration: &quot; &#xD;&#xA;                                        + str864TextMessage);&#xD;&#xA;&#xD;&#xA;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Exp_Log" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="Construct" OID="335e9f33-e1db-465b-ab3f-e7aeb571d633" ParentLink="ServiceBody_Statement" LowerBound="50.1" HigherBound="105.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_Error" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="be57682a-c638-4b2f-81b8-3b6aa8b58522" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="104.1">
+                        <om:Property Name="Expression" Value="// instantiate the xml Document as a fresh XML document.&#xD;&#xA;// this will be used to populate the message.  &#xD;&#xA;xmlTempDoc = new System.Xml.XmlDocument(); &#xD;&#xA;&#xD;&#xA;// set a string equal to a true instance of the &#xD;&#xA;// CustomError schema.  The document here was &#xD;&#xA;// generated using the schema generation tool in &#xD;&#xA;// Visual Studio (right click the schema and generate &#xD;&#xA;// an instance).  The result was pasted here, to ensure&#xD;&#xA;// that a valid instance was created.  Once this is added &#xD;&#xA;// to the message, the values will be overridden.  There &#xD;&#xA;// are other ways to create messages, such as through the &#xD;&#xA;// use of maps, but this is one of the simplest ways to do so.&#xD;&#xA;strXMLDoc = &quot;&lt;ns0:CustomException &quot; + &#xD;&#xA;            &quot;xmlns:ns0='http://Apress.Integration.Generic&quot; + &#xD;&#xA;            &quot;.ExceptionHandler.CustomException'&gt;&quot; +&#xD;&#xA;            &quot;&lt;MessageType&gt;Data&lt;/MessageType&gt;&quot; +&#xD;&#xA;            &quot;&lt;ExceptionMessage&gt;Data&lt;/ExceptionMessage&gt;&quot; +&#xD;&#xA;            &quot;&lt;StackTrace&gt;Data&lt;/StackTrace&gt;&quot; +&#xD;&#xA;            &quot;&lt;/ns0:CustomException&gt;&quot;;&#xD;&#xA;&#xD;&#xA;// populate the xml doc with the contents of the string&#xD;&#xA;// A message is xml, but cannot be instantiated from a &#xD;&#xA;// string (through LoadXML).  It can only be created by &#xD;&#xA;// referencing a populated XML doc.&#xD;&#xA;xmlTempDoc.LoadXml(strXMLDoc);&#xD;&#xA;&#xD;&#xA;// now instantiate the actual Message&#xD;&#xA;Msg_CustomError = xmlTempDoc;&#xD;&#xA;&#xD;&#xA;// reset the values using the distinguished fields (if &#xD;&#xA;// the fields were set with the correct values in the &#xD;&#xA;// string above, this step would not be necessary.  It &#xD;&#xA;// simply demonstrates how to use the schema.  &#xD;&#xA;// Additionally, there would be no need to reference the &#xD;&#xA;// Exception Handler Assembly.&#xD;&#xA;Msg_CustomError.ExceptionMessage = str864TextMessage;&#xD;&#xA;Msg_CustomError.MessageType = &quot;864&quot;;&#xD;&#xA;&#xD;&#xA;// in the case of a true exception, this could be set to &#xD;&#xA;// the System.Exception Stack Trace (or anything else).&#xD;&#xA;Msg_CustomError.StackTrace = &quot;N/A&quot;;&#xD;&#xA;&#xD;&#xA;// Set the ErrorReport Properties. These are promoted &#xD;&#xA;// properties on all messages, and are only set to &#xD;&#xA;// force the message to be seen as a &quot;FailedMessage&quot; &#xD;&#xA;// when it is sent to the MessageBox so that the &#xD;&#xA;// Exception Handling orchestration will subscribe to it.&#xD;&#xA;Msg_CustomError(ErrorReport.ErrorType) = &quot;FailedMessage&quot;; &#xD;&#xA;Msg_CustomError(ErrorReport.FailureCode) = &quot;CustomException&quot;;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="MessageAssignment_1" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="12ee80a2-e381-4902-83ed-94ecb7520f0e" ParentLink="Construct_MessageRef" LowerBound="51.23" HigherBound="51.38">
+                        <om:Property Name="Ref" Value="Msg_CustomError" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="77c5ad63-1ae6-4aa0-8afe-e480c707c1b3" ParentLink="ServiceBody_Statement" LowerBound="105.1" HigherBound="107.1">
+                    <om:Property Name="PortName" Value="Port_SendCustomError" />
+                    <om:Property Name="MessageName" Value="Msg_CustomError" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_CustomErr" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="045dd5ec-de81-4e00-a62c-d32534f247f2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Apress.Integration.EDI864.Common.PortType_Receive864" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Receive864" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="PhysicalBindingAttribute" OID="13628bbe-bc08-4ee2-8b06-df99b67f983d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="C:\Apress.Integration\Chapter 4\Drops\Incoming - Subscribe 864 Only Demo\*.*" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="536086c3-22c6-46f8-8fd2-be5c59438836" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="20" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Apress.Integration.EDI864.Common.PortType_SendCustomError" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendCustomError" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="1250f9b4-6fa2-46cf-b975-dd5226bb23f9" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="0f5454d9-d642-4f91-80a2-8d1c1ac30f0c" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorrelationType_ErrorType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="e4192c91-a061-4953-96d6-009a03e17234" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.30">
+                <om:Property Name="Ref" Value="ErrorReport.ErrorType" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Apress.Integration.EDI864.Common
+{
+    internal porttype PortType_Receive864
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_SendCustomError
+    {
+        oneway Operation_1
+        {
+            Apress.Integration.Generic.ExceptionHandler.CustomException
+        };
+    };
+    internal correlationtype CorrelationType_ErrorType
+    {
+        ErrorReport.ErrorType
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Process864Orch
+    {
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "C:\\Apress.Integration\\Chapter 4\\Drops\\Incoming - Subscribe 864 Only Demo\\*.*", typeof(Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive))]
+        port implements PortType_Receive864 Port_Receive864;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses PortType_SendCustomError Port_SendCustomError;
+        correlation CorrelationType_ErrorType Correlation_CustomError;
+        message System.Xml.XmlDocument Msg_Incoming;
+        message Apress.Integration.Generic.ExceptionHandler.CustomException Msg_CustomError;
+        System.String str864TextMessage;
+        System.String strXMLDoc;
+        System.Xml.XmlDocument xmlTempDoc;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("65609681-070a-4ed3-9114-7a957467c877")]
+            activate ((EDI.ST01 == "864"))receive (Port_Receive864.Operation_1, Msg_Incoming);
+            str864TextMessage = "";
+            strXMLDoc = "";
+            xmlTempDoc = new System.Xml.XmlDocument();
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3873b283-af8a-455c-88d7-1a1cf36aca5d")]
+            str864TextMessage = xpath(Msg_Incoming,"string(//MSG01)");
+            
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("f2eb55f6-28a4-4311-9a3b-6c51cf3ae21a")]
+            System.Diagnostics.EventLog.WriteEntry("864 Received"
+                                                    ,"Demonstration: " 
+                                                    + str864TextMessage);
+            
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("335e9f33-e1db-465b-ab3f-e7aeb571d633")]
+            construct Msg_CustomError
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("be57682a-c638-4b2f-81b8-3b6aa8b58522")]
+                // instantiate the xml Document as a fresh XML document.
+                // this will be used to populate the message.  
+                xmlTempDoc = new System.Xml.XmlDocument(); 
+                
+                // set a string equal to a true instance of the 
+                // CustomError schema.  The document here was 
+                // generated using the schema generation tool in 
+                // Visual Studio (right click the schema and generate 
+                // an instance).  The result was pasted here, to ensure
+                // that a valid instance was created.  Once this is added 
+                // to the message, the values will be overridden.  There 
+                // are other ways to create messages, such as through the 
+                // use of maps, but this is one of the simplest ways to do so.
+                strXMLDoc = "<ns0:CustomException " + 
+                            "xmlns:ns0='http://Apress.Integration.Generic" + 
+                            ".ExceptionHandler.CustomException'>" +
+                            "<MessageType>Data</MessageType>" +
+                            "<ExceptionMessage>Data</ExceptionMessage>" +
+                            "<StackTrace>Data</StackTrace>" +
+                            "</ns0:CustomException>";
+                
+                // populate the xml doc with the contents of the string
+                // A message is xml, but cannot be instantiated from a 
+                // string (through LoadXML).  It can only be created by 
+                // referencing a populated XML doc.
+                xmlTempDoc.LoadXml(strXMLDoc);
+                
+                // now instantiate the actual Message
+                Msg_CustomError = xmlTempDoc;
+                
+                // reset the values using the distinguished fields (if 
+                // the fields were set with the correct values in the 
+                // string above, this step would not be necessary.  It 
+                // simply demonstrates how to use the schema.  
+                // Additionally, there would be no need to reference the 
+                // Exception Handler Assembly.
+                Msg_CustomError.ExceptionMessage = str864TextMessage;
+                Msg_CustomError.MessageType = "864";
+                
+                // in the case of a true exception, this could be set to 
+                // the System.Exception Stack Trace (or anything else).
+                Msg_CustomError.StackTrace = "N/A";
+                
+                // Set the ErrorReport Properties. These are promoted 
+                // properties on all messages, and are only set to 
+                // force the message to be seen as a "FailedMessage" 
+                // when it is sent to the MessageBox so that the 
+                // Exception Handling orchestration will subscribe to it.
+                Msg_CustomError(ErrorReport.ErrorType) = "FailedMessage"; 
+                Msg_CustomError(ErrorReport.FailureCode) = "CustomException";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("77c5ad63-1ae6-4aa0-8afe-e480c707c1b3")]
+            send (Port_SendCustomError.Operation_1, Msg_CustomError, initialize Correlation_CustomError);
+        }
+    }
+}
+

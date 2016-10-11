@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2007-07-19T10:43:52.875-06:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:EDI.Demonstration.Chapter5]" Version="" Culture="" PublicKeyToken="" FullName="[Application:EDI.Demonstration.Chapter5], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="pipeline" Version="1.0.0.0" Culture="neutral" PublicKeyToken="9c54b448784d3202" FullName="pipeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9c54b448784d3202">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="EDI.Demonstration.Example.SecureFTP.FTP" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>FTP://localhost:21/EDI.Demonstration/VAN - Outbox/%MessageId%.txt</Address>
+        <TransportType Name="nsoftware.FTP v2" Capabilities="12299" ConfigurationClsid="2777616c-f326-4248-a478-8748270376f7" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;Account /&amp;gt;&amp;lt;AfterPut /&amp;gt;&amp;lt;Append&amp;gt;False&amp;lt;/Append&amp;gt;&amp;lt;BeforePut /&amp;gt;&amp;lt;FirewallHost /&amp;gt;&amp;lt;FirewallPassword&amp;gt;******&amp;lt;/FirewallPassword&amp;gt;&amp;lt;FirewallPort&amp;gt;0&amp;lt;/FirewallPort&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;FirewallUser /&amp;gt;&amp;lt;FTPPort&amp;gt;21&amp;lt;/FTPPort&amp;gt;&amp;lt;FTPServer&amp;gt;localhost&amp;lt;/FTPServer&amp;gt;&amp;lt;LocalFile /&amp;gt;&amp;lt;Overwrite&amp;gt;False&amp;lt;/Overwrite&amp;gt;&amp;lt;Passive&amp;gt;True&amp;lt;/Passive&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;RemoteFile&amp;gt;%MessageId%.txt&amp;lt;/RemoteFile&amp;gt;&amp;lt;RemoteFileTempExt /&amp;gt;&amp;lt;RemotePath&amp;gt;EDI.Demonstration/VAN - Outbox/&amp;lt;/RemotePath&amp;gt;&amp;lt;SSLAcceptServerCert /&amp;gt;&amp;lt;SSLCert /&amp;gt;&amp;lt;SSLStartMode&amp;gt;3&amp;lt;/SSLStartMode&amp;gt;&amp;lt;TempDir&amp;gt;c:\temp&amp;lt;/TempDir&amp;gt;&amp;lt;TransferMode&amp;gt;1&amp;lt;/TransferMode&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TraceMode&amp;gt;0&amp;lt;/TraceMode&amp;gt;&amp;lt;User&amp;gt;administrator&amp;lt;/User&amp;gt;&amp;lt;uri&amp;gt;FTP://localhost:21/EDI.Demonstration/VAN - Outbox/%MessageId%.txt&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-12T06:00:00</FromTime>
+        <ToTime>2007-07-13T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="nsoftware.FTP v2" Capabilities="12299" ConfigurationClsid="2777616c-f326-4248-a478-8748270376f7" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-12T06:00:00</FromTime>
+        <ToTime>2007-07-13T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="EDI.Demonstration.Example.SecureFTP.FILE" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms>
+        <Transform FullName="Apress.Integration.EDI810.CompanyX.CommonXMLToCompanyX810" AssemblyQualifiedName="Apress.Integration.EDI810.CompanyX.CommonXMLToCompanyX810,Apress.Integration.EDI810.CompanyX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f68eed021057ff3b" />
+      </Transforms>
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </SendPort>
+    <SendPort Name="EDI.Demonstration.Example.AS2Standard.HTTP.810" IsStatic="true" IsTwoWay="true" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2EdiSend" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2EdiSend, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>http://as2.mendelson-e-c.com:8080/as2/HttpReceiver</Address>
+        <TransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;EnableChunkedEncoding vt="11"&gt;0&lt;/EnableChunkedEncoding&gt;&lt;ProxyPort vt="3"&gt;80&lt;/ProxyPort&gt;&lt;AuthenticationScheme vt="8"&gt;Anonymous&lt;/AuthenticationScheme&gt;&lt;UseHandlerSetting vt="11"&gt;-1&lt;/UseHandlerSetting&gt;&lt;UseProxy vt="11"&gt;0&lt;/UseProxy&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-13T06:00:00</FromTime>
+        <ToTime>2007-07-14T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-13T06:00:00</FromTime>
+        <ToTime>2007-07-14T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <EncryptionCert LongName="E=rosettanet@mendelson.de, C=DE, S=Berlin, L=Berlin, O=mendelson-e-commerce GmbH, OU=mendelson-e-commerce GmbH, CN=mend" ShortName="rosettanet@mendelson.de, DE, Berlin, Berlin, mendelson-e-commerce GmbH, mendelson-e-commerce GmbH, mend" UsageType="Both" ThumbPrint="6D9A2C79020BF16B2078E4A3BEDF93DD2AADB740" />
+      <ReceivePipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Receive" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2Receive, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="EDI.Demonstration.Example.SecureFTP.FILE" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms>
+        <Transform FullName="Apress.Integration.EDI810.CompanyX.CommonXMLToCompanyX810" AssemblyQualifiedName="Apress.Integration.EDI810.CompanyX.CommonXMLToCompanyX810,Apress.Integration.EDI810.CompanyX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f68eed021057ff3b" />
+      </Transforms>
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </SendPort>
+    <SendPort Name="EDI.Demonstration.Example.nSoftwareAS2.AS2.810" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2EdiSend" FullyQualifiedName="Microsoft.BizTalk.EdiInt.DefaultPipelines.AS2EdiSend, Microsoft.BizTalk.Edi.EdiIntPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>AS2://as2.mendelson-e-c.com:8080/as2/HttpReceiver</Address>
+        <TransportType Name="nsoftware.AS2 v2" Capabilities="12547" ConfigurationClsid="2777637c-f326-4248-a478-8748270376f7" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;AS2From&amp;gt;mycompanyAS2&amp;lt;/AS2From&amp;gt;&amp;lt;AS2Subject /&amp;gt;&amp;lt;AS2To&amp;gt;mendelsontestAS2&amp;lt;/AS2To&amp;gt;&amp;lt;AS2Version&amp;gt;1.1&amp;lt;/AS2Version&amp;gt;&amp;lt;CompressionFormat&amp;gt;0&amp;lt;/CompressionFormat&amp;gt;&amp;lt;EDIType&amp;gt;application/edi-x12&amp;lt;/EDIType&amp;gt;&amp;lt;EncryptingAlgorithm&amp;gt;3DES&amp;lt;/EncryptingAlgorithm&amp;gt;&amp;lt;FirewallHost /&amp;gt;&amp;lt;FirewallPassword&amp;gt;******&amp;lt;/FirewallPassword&amp;gt;&amp;lt;FirewallPort&amp;gt;0&amp;lt;/FirewallPort&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;FirewallUser /&amp;gt;&amp;lt;From /&amp;gt;&amp;lt;HTTPPassword&amp;gt;******&amp;lt;/HTTPPassword&amp;gt;&amp;lt;HTTPUser /&amp;gt;&amp;lt;LogDirectory&amp;gt;C:\Temp&amp;lt;/LogDirectory&amp;gt;&amp;lt;MDNDeliveryOption /&amp;gt;&amp;lt;MDNMICValue /&amp;gt;&amp;lt;MDNOptions&amp;gt;signed-receipt-protocol=optional, pkcs7-signature; signed-receipt-micalg=optional, sha1, md5&amp;lt;/MDNOptions&amp;gt;&amp;lt;MDNReceipt /&amp;gt;&amp;lt;MDNTo /&amp;gt;&amp;lt;MessageId&amp;gt;@%MessageId%&amp;lt;/MessageId&amp;gt;&amp;lt;ProxyPassword&amp;gt;******&amp;lt;/ProxyPassword&amp;gt;&amp;lt;ProxyPort&amp;gt;80&amp;lt;/ProxyPort&amp;gt;&amp;lt;ProxyServer /&amp;gt;&amp;lt;ProxySSL&amp;gt;0&amp;lt;/ProxySSL&amp;gt;&amp;lt;ProxyUser /&amp;gt;&amp;lt;ReceiptSignerCert&amp;gt;&amp;amp;lt;Certificate&amp;amp;gt;&amp;amp;lt;Encoded&amp;amp;gt;-----BEGIN CERTIFICATE-----
+MIIC0DCCAjkCBEOO/fMwDQYJKoZIhvcNAQEFBQAwga4xJjAkBgkqhkiG9w0BCQEWF3Jvc2V0dGFu
+ZXRAbWVuZGVsc29uLmRlMQswCQYDVQQGEwJERTEPMA0GA1UECBMGQmVybGluMQ8wDQYDVQQHEwZC
+ZXJsaW4xIjAgBgNVBAoTGW1lbmRlbHNvbi1lLWNvbW1lcmNlIEdtYkgxIjAgBgNVBAsTGW1lbmRl
+bHNvbi1lLWNvbW1lcmNlIEdtYkgxDTALBgNVBAMTBG1lbmQwHhcNMDUxMjAxMTM0MzE1WhcNMTkw
+ODEwMTM0MzE1WjCBrjEmMCQGCSqGSIb3DQEJARYXcm9zZXR0YW5ldEBtZW5kZWxzb24uZGUxCzAJ
+BgNVBAYTAkRFMQ8wDQYDVQQIEwZCZXJsaW4xDzANBgNVBAcTBkJlcmxpbjEiMCAGA1UEChMZbWVu
+ZGVsc29uLWUtY29tbWVyY2UgR21iSDEiMCAGA1UECxMZbWVuZGVsc29uLWUtY29tbWVyY2UgR21i
+SDENMAsGA1UEAxMEbWVuZDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1QYrk0Zb4MsdAbkz
+FfLp2mZOg6H1ZpWRpyeMm+1ozNiqA/zeDPnzgoAEjmDYhpR3BID1XsvOA+pzixH5YbOQFZ0Z+SNV
+TMxQ0tDLQYsylKBneynDr11iOCBxu2wdkFhEZ0NJJRdY3sS95iHOKFqvdlPeyblrMnrBYZW9vcN8
+fUECAwEAATANBgkqhkiG9w0BAQUFAAOBgQCucT5rhqerUTOPyUHf1ia8gCknTM1QyKUAReS3nmIi
+YuTsBqxvLQ72jEFCgOTGPyUq/IlnB91mrNcXuo11V6eMFNQ5+RDyz600XM8R4MXhnp4jtDQeMrQF
+k/bbbrt/lUeG/rA/eUgn82iATpALtcwzb1EQNxf++hbo6AqCZrXBVg==
+-----END CERTIFICATE-----
+&amp;amp;lt;/Encoded&amp;amp;gt;&amp;amp;lt;Subject&amp;amp;gt;E=rosettanet@mendelson.de, C=DE, S=Berlin, L=Berlin, O=mendelson-e-commerce GmbH, OU=mendelson-e-commerce GmbH, CN=mend&amp;amp;lt;/Subject&amp;amp;gt;&amp;amp;lt;/Certificate&amp;amp;gt;&amp;lt;/ReceiptSignerCert&amp;gt;&amp;lt;RecipientCert&amp;gt;&amp;amp;lt;Certificate&amp;amp;gt;&amp;amp;lt;Encoded&amp;amp;gt;-----BEGIN CERTIFICATE-----
+MIIC0DCCAjkCBEOO/fMwDQYJKoZIhvcNAQEFBQAwga4xJjAkBgkqhkiG9w0BCQEWF3Jvc2V0dGFu
+ZXRAbWVuZGVsc29uLmRlMQswCQYDVQQGEwJERTEPMA0GA1UECBMGQmVybGluMQ8wDQYDVQQHEwZC
+ZXJsaW4xIjAgBgNVBAoTGW1lbmRlbHNvbi1lLWNvbW1lcmNlIEdtYkgxIjAgBgNVBAsTGW1lbmRl
+bHNvbi1lLWNvbW1lcmNlIEdtYkgxDTALBgNVBAMTBG1lbmQwHhcNMDUxMjAxMTM0MzE1WhcNMTkw
+ODEwMTM0MzE1WjCBrjEmMCQGCSqGSIb3DQEJARYXcm9zZXR0YW5ldEBtZW5kZWxzb24uZGUxCzAJ
+BgNVBAYTAkRFMQ8wDQYDVQQIEwZCZXJsaW4xDzANBgNVBAcTBkJlcmxpbjEiMCAGA1UEChMZbWVu
+ZGVsc29uLWUtY29tbWVyY2UgR21iSDEiMCAGA1UECxMZbWVuZGVsc29uLWUtY29tbWVyY2UgR21i
+SDENMAsGA1UEAxMEbWVuZDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA1QYrk0Zb4MsdAbkz
+FfLp2mZOg6H1ZpWRpyeMm+1ozNiqA/zeDPnzgoAEjmDYhpR3BID1XsvOA+pzixH5YbOQFZ0Z+SNV
+TMxQ0tDLQYsylKBneynDr11iOCBxu2wdkFhEZ0NJJRdY3sS95iHOKFqvdlPeyblrMnrBYZW9vcN8
+fUECAwEAATANBgkqhkiG9w0BAQUFAAOBgQCucT5rhqerUTOPyUHf1ia8gCknTM1QyKUAReS3nmIi
+YuTsBqxvLQ72jEFCgOTGPyUq/IlnB91mrNcXuo11V6eMFNQ5+RDyz600XM8R4MXhnp4jtDQeMrQF
+k/bbbrt/lUeG/rA/eUgn82iATpALtcwzb1EQNxf++hbo6AqCZrXBVg==
+-----END CERTIFICATE-----
+&amp;amp;lt;/Encoded&amp;amp;gt;&amp;amp;lt;Subject&amp;amp;gt;E=rosettanet@mendelson.de, C=DE, S=Berlin, L=Berlin, O=mendelson-e-commerce GmbH, OU=mendelson-e-commerce GmbH, CN=mend&amp;amp;lt;/Subject&amp;amp;gt;&amp;amp;lt;/Certificate&amp;amp;gt;&amp;lt;/RecipientCert&amp;gt;&amp;lt;SigningCert&amp;gt;&amp;amp;lt;Certificate&amp;amp;gt;&amp;amp;lt;StoreType&amp;amp;gt;2&amp;amp;lt;/StoreType&amp;amp;gt;&amp;amp;lt;Store&amp;amp;gt;C:\Temp\key1.pfx&amp;amp;lt;/Store&amp;amp;gt;&amp;amp;lt;StorePassword&amp;amp;gt;test&amp;amp;lt;/StorePassword&amp;amp;gt;&amp;amp;lt;Subject&amp;amp;gt;E=rosettanet@mendelson.de, C=DE, S=Berlin, L=Berlin, O=mendelson-e-commerce GmbH, OU=mendelson-e-commerce GmbH, CN=mend&amp;amp;lt;/Subject&amp;amp;gt;&amp;amp;lt;/Certificate&amp;amp;gt;&amp;lt;/SigningCert&amp;gt;&amp;lt;SSLAcceptServerCert /&amp;gt;&amp;lt;SSLCert /&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TraceMode&amp;gt;2&amp;lt;/TraceMode&amp;gt;&amp;lt;URL&amp;gt;http://as2.mendelson-e-c.com:8080/as2/HttpReceiver&amp;lt;/URL&amp;gt;&amp;lt;UserAgent&amp;gt;IP*Works! AS2 Transmit Adapter - www.nsoftware.com&amp;lt;/UserAgent&amp;gt;&amp;lt;uri&amp;gt;AS2://as2.mendelson-e-c.com:8080/as2/HttpReceiver&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-17T06:00:00</FromTime>
+        <ToTime>2007-07-18T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="nsoftware.AS2 v2" Capabilities="12547" ConfigurationClsid="2777637c-f326-4248-a478-8748270376f7" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-17T06:00:00</FromTime>
+        <ToTime>2007-07-18T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="EDI.Demonstration.Example.SecureFTP.FILE" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms>
+        <Transform FullName="Apress.Integration.EDI810.CompanyX.CommonXMLToCompanyX810" AssemblyQualifiedName="Apress.Integration.EDI810.CompanyX.CommonXMLToCompanyX810,Apress.Integration.EDI810.CompanyX, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f68eed021057ff3b" />
+      </Transforms>
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </SendPort>
+    <SendPort Name="EDI.Demonstration.Example.SecureFTP.File" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>C:\Apress.Integration\Chapter 5\Drops\Outgoing - Secure FTP Demo\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-17T06:00:00</FromTime>
+        <ToTime>2007-07-18T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-17T06:00:00</FromTime>
+        <ToTime>2007-07-18T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.ReceivePortName" Operator="0" Value="EDI.Demonstration.Example.SecureFTP.FTP" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </SendPort>
+    <SendPort Name="EDI.Demonstration.Example.BatchDemo.FILE" IsStatic="true" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" />
+      <PrimaryTransport>
+        <Address>C:\Apress.Integration\Chapter 5\Drops\Outgoing - Batch Demo\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-17T06:00:00</FromTime>
+        <ToTime>2007-07-18T05:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkServerApplication" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2007-07-17T06:00:00</FromTime>
+        <ToTime>2007-07-18T05:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="EDI.DestinationPartyName" Operator="0" Value="BatchingDemo" /&gt;
+    &lt;Statement Property="EDI.ToBeBatched" Operator="0" Value="False" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="EDI.Demonstration.Example.SecureFTP.FILE" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="FileReceiveForFTP">
+          <Description xsi:nil="true" />
+          <Address>C:\Apress.Integration\Chapter 5\Drops\Incoming - Secure FTP Demo\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2007-07-12T06:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2007-07-13T05:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-07-11T18:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-07-12T18:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="EDI.Demonstration.Example.BatchDemo.FILE" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="BatchDemoReceive">
+          <Description xsi:nil="true" />
+          <Address>C:\Apress.Integration\Chapter 5\Drops\Incoming - Batch Demo\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2007-07-17T06:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2007-07-18T05:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-07-16T18:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-07-17T18:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiReceive, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="EDI.Demonstration.Example.SecureFTP.FTP" IsTwoWay="false" BindingOption="0">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="ReceiveSecureFTP">
+          <Description xsi:nil="true" />
+          <Address>FTP://localhost:21/EDI.Demonstration/VAN - Inbox/*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2007-07-17T06:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2007-07-18T05:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2007-07-16T18:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2007-07-17T18:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="nsoftware.FTP v2" Capabilities="12299" ConfigurationClsid="2777616c-f326-4248-a478-8748270376f7" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;&amp;lt;Account /&amp;gt;&amp;lt;AfterGet /&amp;gt;&amp;lt;BeforeGet /&amp;gt;&amp;lt;DeleteMode&amp;gt;1&amp;lt;/DeleteMode&amp;gt;&amp;lt;FileMask&amp;gt;*.*&amp;lt;/FileMask&amp;gt;&amp;lt;FirewallHost /&amp;gt;&amp;lt;FirewallPassword&amp;gt;******&amp;lt;/FirewallPassword&amp;gt;&amp;lt;FirewallPort&amp;gt;0&amp;lt;/FirewallPort&amp;gt;&amp;lt;FirewallType&amp;gt;0&amp;lt;/FirewallType&amp;gt;&amp;lt;FirewallUser /&amp;gt;&amp;lt;FTPPort&amp;gt;21&amp;lt;/FTPPort&amp;gt;&amp;lt;FTPServer&amp;gt;localhost&amp;lt;/FTPServer&amp;gt;&amp;lt;LocalFile /&amp;gt;&amp;lt;Overwrite&amp;gt;False&amp;lt;/Overwrite&amp;gt;&amp;lt;Passive&amp;gt;True&amp;lt;/Passive&amp;gt;&amp;lt;Password&amp;gt;******&amp;lt;/Password&amp;gt;&amp;lt;RemotePath&amp;gt;/EDI.Demonstration/VAN - Inbox/&amp;lt;/RemotePath&amp;gt;&amp;lt;SSLAcceptServerCert /&amp;gt;&amp;lt;SSLCert /&amp;gt;&amp;lt;SSLStartMode&amp;gt;3&amp;lt;/SSLStartMode&amp;gt;&amp;lt;TempDir /&amp;gt;&amp;lt;TransferMode&amp;gt;0&amp;lt;/TransferMode&amp;gt;&amp;lt;ErrorThreshold&amp;gt;5&amp;lt;/ErrorThreshold&amp;gt;&amp;lt;FileCount&amp;gt;0&amp;lt;/FileCount&amp;gt;&amp;lt;FileSize&amp;gt;0&amp;lt;/FileSize&amp;gt;&amp;lt;Other /&amp;gt;&amp;lt;PollingInterval&amp;gt;60&amp;lt;/PollingInterval&amp;gt;&amp;lt;SuspendOnError&amp;gt;False&amp;lt;/SuspendOnError&amp;gt;&amp;lt;Timeout&amp;gt;60&amp;lt;/Timeout&amp;gt;&amp;lt;TraceMode&amp;gt;2&amp;lt;/TraceMode&amp;gt;&amp;lt;User&amp;gt;administrator&amp;lt;/User&amp;gt;&amp;lt;uri&amp;gt;FTP://localhost:21/EDI.Demonstration/VAN - Inbox/*.*&amp;lt;/uri&amp;gt;&amp;lt;/Config&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="nsoftware.FTP v2" Capabilities="12299" ConfigurationClsid="2777616c-f326-4248-a478-8748270376f7" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>EDI.Demonstration.Chapter5</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection />
+</BindingInfo>

@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{EF7E3281-CD33-11D4-8326-00C04FA0CE8D}") = "Apress.Integration.Generic.ExceptionHandler", "Apress.Integration.Generic.ExceptionHandler.btproj", "{AEF3026D-B995-4458-83E9-968598B4E770}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deployment|.NET = Deployment|.NET
+		Development|.NET = Development|.NET
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEF3026D-B995-4458-83E9-968598B4E770}.Deployment|.NET.ActiveCfg = Deployment|.NET
+		{AEF3026D-B995-4458-83E9-968598B4E770}.Deployment|.NET.Build.0 = Deployment|.NET
+		{AEF3026D-B995-4458-83E9-968598B4E770}.Deployment|.NET.Deploy.0 = Deployment|.NET
+		{AEF3026D-B995-4458-83E9-968598B4E770}.Development|.NET.ActiveCfg = Development|.NET
+		{AEF3026D-B995-4458-83E9-968598B4E770}.Development|.NET.Build.0 = Development|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

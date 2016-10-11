@@ -1,0 +1,10 @@
+﻿<SerializableFifo>
+  <Elem Type="System.Int32" Value="1" />
+  <Elem Type="System.Boolean" Value="True" />
+  <Elem Type="System.String" Value="MDB-D820" />
+  <Elem Type="System.String" Value="BizTalkMgmtDb" />
+  <Elem Type="System.String" Value="Microsoft.BizTalk.Administration.SnapIn.Forms.GroupHub.SavedQueryPage" />
+  <Elem Type="System.Boolean" Value="True" />
+  <Elem Type="System.String" Value="&lt;SerializableFifo&gt;&#xD;&#xA;  &lt;Elem Type=&quot;System.String&quot; Value=&quot;Microsoft.BizTalk.SnapIn.Framework.QueryBuilder.QueryTypeExpressionProperty&quot; /&gt;&#xD;&#xA;  &lt;Elem Type=&quot;System.Int32&quot; Value=&quot;2&quot; /&gt;&#xD;&#xA;  &lt;Elem Type=&quot;System.String&quot; Value=&quot;System.String&quot; /&gt;&#xD;&#xA;  &lt;Elem Type=&quot;System.String&quot; Value=&quot;Microsoft.BizTalk.Administration.SnapIn.Forms.GroupHub.Components.Enumerators.MessageInstancesQuery&quot; /&gt;&#xD;&#xA;&lt;/SerializableFifo&gt;" />
+  <Elem Type="System.String" Value="&lt;SerializableFifo&gt;&#xD;&#xA;  &lt;Elem Type=&quot;System.Int32&quot; Value=&quot;716&quot; /&gt;&#xD;&#xA;  &lt;Elem Type=&quot;System.Int32&quot; Value=&quot;0&quot; /&gt;&#xD;&#xA;  &lt;Elem Type=&quot;System.Int32&quot; Value=&quot;0&quot; /&gt;&#xD;&#xA;&lt;/SerializableFifo&gt;" />
+</SerializableFifo>

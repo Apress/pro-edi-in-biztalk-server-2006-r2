@@ -1,0 +1,39 @@
+<COMMON_810 xmlns="http://schemas.Apress.com/Common/810/v1">
+<TRANSACTION>
+  <HEADER>
+    <GUID>8F97D20B-687F-4B82-A231-13BB30944E47</GUID>
+    <DOCID>1000</DOCID>
+    <DESC>Sample Invoice #1 for Company Y</DESC>
+    <PARTNER>Company Y</PARTNER>
+  </HEADER>
+  <ADDRESSES>
+    <ADDRESS>
+      <TYPE>Billing</TYPE>
+      <STREET>99 Highway R</STREET>
+      <CITY>City R</CITY>
+      <STATE>State B</STATE>
+      <ZIP>23456</ZIP>
+    </ADDRESS>
+  </ADDRESSES>
+  <ITEMS>
+    <ITEM>
+      <TYPE>Standard</TYPE>
+      <PRICE>12.0000</PRICE>
+      <DESC>Item K</DESC>
+      <QTY>2</QTY>
+    </ITEM>
+    <ITEM>
+      <TYPE>Standard</TYPE>
+      <PRICE>10.0000</PRICE>
+      <DESC>Item K</DESC>
+      <QTY>2</QTY>
+    </ITEM>
+    <ITEM>
+      <TYPE>Hidden</TYPE>
+      <PRICE>100.0000</PRICE>
+      <DESC>Item J</DESC>
+      <QTY>1</QTY>
+    </ITEM>
+  </ITEMS>
+</TRANSACTION>
+</COMMON_810>

@@ -1,0 +1,1 @@
+The exercises in the book refer to this sample code being deployed to C:\Apress.Integration\[Chapter Name].  For simplicity of reference, place this code and folder structure in the same location.
