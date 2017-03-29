@@ -1,4 +1,4 @@
-#Apress Source Code
+# Apress Source Code
 
 This repository accompanies [*Pro EDI in BizTalk Server 2006 R2*](http://www.apress.com/9781590599358) by Mark Beckner (Apress, 2007).
 
@@ -6,10 +6,10 @@ This repository accompanies [*Pro EDI in BizTalk Server 2006 R2*](http://www.apr
 
 Download the files as a zip using the green button, or clone the repository to your machine using Git.
 
-##Releases
+## Releases
 
 Release v1.0 corresponds to the code in the published book, without corrections or updates.
 
-##Contributions
+## Contributions
 
 See the file Contributing.md for more information on how you can contribute to this repository.
